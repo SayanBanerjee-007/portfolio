@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayan Banerjee - Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Background -->
+    <div class="background">
+        <div class="gradient-overlay"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>Sayan.dev</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#resume" class="nav-link">Resume</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">Hi, I'm</span>
+                    <span class="name-animation">Sayan Banerjee</span>
+                </h1>
+                <h2 class="hero-subtitle">Full Stack Developer</h2>
+                <p class="hero-description">
+                    Passionate about creating amazing web experiences with JavaScript and modern technologies.
+                    Currently exploring the depths of full-stack development while studying at Narula Institute of
+                    Technology.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">35+</span>
+                        <span class="stat-label">Repositories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Years Learning</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card glass">
+                    <div class="profile-image">
+                        <img src="https://avatars.githubusercontent.com/u/115403169?v=4" alt="Sayan Banerjee"
+                            id="profile-img">
+                        <div class="profile-ring"></div>
+                    </div>
+                    <div class="profile-info">
+                        <h3>Sayan Banerjee</h3>
+                        <p>@SayanBanerjee-007</p>
+                        <div class="profile-badges">
+                            <span class="badge">Full Stack</span>
+                            <span class="badge">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="text-card glass">
+                        <h3>🎯 My Journey</h3>
+                        <p>
+                            I'm currently studying at Narula Institute of Technology, diving deep into the world of
+                            full-stack web development. My journey with programming began with C, and now I'm exploring
+                            the endless possibilities with JavaScript and modern web technologies.
+                        </p>
+                        <p>
+                            I believe in learning by doing, which is why I've built various projects ranging from
+                            video calling applications to YouTube clone backends. Each project teaches me something
+                            new and pushes me to become a better developer.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card glass">
+                        <div class="highlight-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Education</h4>
+                        <p>Narula Institute of Technology</p>
+                    </div>
+                    <div class="highlight-card glass">
+                        <div class="highlight-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Focus</h4>
+                        <p>Full Stack Development</p>
+                    </div>
+                    <div class="highlight-card glass">
+                        <div class="highlight-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Passion</h4>
+                        <p>Creating Amazing Experiences</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tech Stack</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category glass">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category glass">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>Express.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>JWT</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category glass">
+                    <h3><i class="fas fa-tools"></i> Tools & Others</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>Socket.io</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>Redux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            <div class="projects-grid">
+                <!-- YouTube Clone Backend -->
+                <div class="project-card glass">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SayanBanerjee-007/youtube-clone-backend-api" target="_blank"
+                                class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>YouTube Clone Backend API</h3>
+                        <p>
+                            A robust, scalable backend API for a YouTube-like video sharing platform.
+                            Features include JWT authentication, video management, social features,
+                            and comprehensive API documentation.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">Cloudinary</span>
+                        </div>
+                        <div class="project-features">
+                            <span class="feature"><i class="fas fa-check"></i> RESTful API Design</span>
+                            <span class="feature"><i class="fas fa-check"></i> User Authentication</span>
+                            <span class="feature"><i class="fas fa-check"></i> File Upload & Storage</span>
+                            <span class="feature"><i class="fas fa-check"></i> Social Features</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MEET_CAM -->
+                <div class="project-card glass">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SayanBanerjee-007/MEET_CAM" target="_blank"
+                                class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://meet-cam.onrender.com/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>MEET CAM</h3>
+                        <p>
+                            My first full-stack website built from scratch! A complete video calling
+                            platform where you can create group meetings, video/audio calls,
+                            screen sharing, and live chat functionality.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">PeerJS</span>
+                            <span class="tech-tag">EJS</span>
+                        </div>
+                        <div class="project-features">
+                            <span class="feature"><i class="fas fa-check"></i> Video/Audio Calls</span>
+                            <span class="feature"><i class="fas fa-check"></i> Screen Sharing</span>
+                            <span class="feature"><i class="fas fa-check"></i> Live Chat</span>
+                            <span class="feature"><i class="fas fa-check"></i> OTP Verification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Courses Platform -->
+                <div class="project-card glass">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SayanBanerjee-007/Courses" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Courses Platform</h3>
+                        <p>
+                            An assignment project to showcase courses for an internship.
+                            Built with modern React.js frontend and Express.js backend
+                            with real-time features using Socket.io.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Redux Toolkit</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Socket.io</span>
+                        </div>
+                        <div class="project-features">
+                            <span class="feature"><i class="fas fa-check"></i> Course Management</span>
+                            <span class="feature"><i class="fas fa-check"></i> Real-time Updates</span>
+                            <span class="feature"><i class="fas fa-check"></i> REST API</span>
+                            <span class="feature"><i class="fas fa-check"></i> Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Resume & Achievements</h2>
+                <p class="section-subtitle">My professional journey and accomplishments</p>
+            </div>
+            <div class="resume-content">
+                <div class="resume-card glass">
+                    <div class="resume-header">
+                        <div class="resume-info">
+                            <h3>My Professional Resume</h3>
+                            <p>Download my complete resume to learn more about my experience, education, and skills.</p>
+                        </div>
+                        <div class="resume-actions">
+                            <a href="./assets/resume/Sayan_Banerjee.pdf" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-download"></i>
+                                Download Resume
+                            </a>
+                            <a href="./assets/resume/Sayan_Banerjee.pdf" target="_blank" class="btn btn-secondary">
+                                <i class="fas fa-eye"></i>
+                                View Online
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievements-grid">
+                    <div class="achievement-card glass">
+                        <div class="achievement-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>LeetCode Profile</h4>
+                        <p>Practicing data structures and algorithms regularly</p>
+                        <a href="https://leetcode.com/u/sayanbanerjee007/" target="_blank" class="achievement-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Profile
+                        </a>
+                    </div>
+
+                    <div class="achievement-card glass">
+                        <div class="achievement-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Education</h4>
+                        <p>Narula Institute of Technology<br>Computer Science & Engineering</p>
+                        <div class="achievement-link">
+                            <i class="fas fa-calendar"></i>
+                            Currently Pursuing
+                        </div>
+                    </div>
+
+                    <div class="achievement-card glass">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4>GitHub Stats</h4>
+                        <p>35+ repositories showcasing various projects and learning journey</p>
+                        <a href="https://github.com/SayanBanerjee-007" target="_blank" class="achievement-link">
+                            <i class="fab fa-github"></i>
+                            View GitHub
+                        </a>
+                    </div>
+
+                    <div class="achievement-card glass">
+                        <div class="achievement-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Focus Areas</h4>
+                        <p>Full-Stack Development, JavaScript Ecosystem, Modern Web Technologies</p>
+                        <div class="achievement-link">
+                            <i class="fas fa-star"></i>
+                            Specialization
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's build something amazing together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info-center">
+                    <div class="contact-card glass">
+                        <h3>Let's Connect</h3>
+                        <p>
+                            I'm always open to discussing new opportunities,
+                            collaborating on interesting projects, or just having
+                            a chat about technology and development.
+                        </p>
+                        <div class="contact-methods">
+                            <a href="mailto:sayankb.001@gmail.com" class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <span>sayankb.001@gmail.com</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/SayanBanerjee007" target="_blank"
+                                class="contact-method">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/SayanBanerjee-007" target="_blank" class="contact-method">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://leetcode.com/u/sayanbanerjee007/" target="_blank" class="contact-method">
+                                <i class="fas fa-code"></i>
+                                <span>LeetCode</span>
+                            </a>
+                            <a href="https://www.instagram.com/sayanbanerjee659" target="_blank" class="contact-method">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Sayan Banerjee. Made with <i class="fas fa-heart"></i> and lots of <i
+                            class="fas fa-coffee"></i></p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/SayanBanerjee-007" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/SayanBanerjee007" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/sayanbanerjee007/" target="_blank">
+                        <i class="fas fa-code"></i>
+                    </a>
+                    <a href="https://www.instagram.com/sayanbanerjee659" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
