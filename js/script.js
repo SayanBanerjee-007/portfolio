@@ -27,19 +27,155 @@ function updateThemeIcon(theme) {
 
 // Mobile Navigation
 const hamburger = document.getElementById('hamburger')
-const navMenu = document.querySelector('.nav-menu')
+const mobileMenu = document.querySelector('.mobile-menu')
+const closeMenuBtn = document.getElementById('close-menu-btn')
+const mobileMenuContainer = document.querySelector(
+	'.mobile-menu-container'
+)
 
-hamburger.addEventListener('click', () => {
-	hamburger.classList.toggle('active')
-	navMenu.classList.toggle('active')
-})
+// Function to reset hamburger icon to default state
+function resetHamburgerIcon() {
+	hamburger.innerHTML = `
+		<span class="hamburger-line" style="margin-bottom: 5px;"></span>
+		<span class="hamburger-line"></span>
+		<span class="hamburger-line" style="margin-top: 5px;"></span>
+	`
+}
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-	link.addEventListener('click', () => {
-		hamburger.classList.remove('active')
-		navMenu.classList.remove('active')
+// Initialize hamburger icon on page load
+if (hamburger) {
+	resetHamburgerIcon()
+}
+
+// Debug: Check if elements exist
+console.log('Hamburger element:', hamburger)
+console.log('Mobile menu element:', mobileMenu)
+console.log('Close menu button:', closeMenuBtn)
+console.log('Mobile menu container:', mobileMenuContainer)
+
+// Test function to manually trigger menu
+window.testMenu = function () {
+	if (mobileMenu) {
+		mobileMenu.classList.toggle('active')
+		console.log(
+			'Menu toggled manually, active class:',
+			mobileMenu.classList.contains('active')
+		)
+	}
+}
+
+if (hamburger && mobileMenu) {
+	hamburger.addEventListener('click', e => {
+		e.preventDefault()
+		e.stopPropagation()
+
+		console.log('Hamburger clicked!') // Debug log
+		console.log('Current window width:', window.innerWidth) // Debug log
+
+		const isActive = !hamburger.classList.contains('active')
+
+		// Update classes
+		hamburger.classList.toggle('active')
+		mobileMenu.classList.toggle('active')
+
+		// Directly update hamburger HTML for immediate change without transition
+		if (isActive) {
+			// Switch to X icon
+			hamburger.innerHTML = `
+				<span style="position:absolute; top:50%; left:50%; margin-left:-12px; margin-top:-2px; transform:rotate(45deg); background:var(--primary-color); width:24px; height:4px; box-shadow:0 0 10px rgba(79,70,229,0.7);"></span>
+				<span style="display:none;"></span>
+				<span style="position:absolute; top:50%; left:50%; margin-left:-12px; margin-top:-2px; transform:rotate(-45deg); background:var(--primary-color); width:24px; height:4px; box-shadow:0 0 10px rgba(79,70,229,0.7);"></span>
+			`
+		} else {
+			// Switch back to hamburger icon with proper spacing
+			resetHamburgerIcon()
+		}
+
+		console.log(
+			'Hamburger active:',
+			hamburger.classList.contains('active')
+		)
+		console.log(
+			'Mobile menu active:',
+			mobileMenu.classList.contains('active')
+		)
+
+		// Prevent body scroll when menu is open
+		if (mobileMenu.classList.contains('active')) {
+			document.body.style.overflow = 'hidden'
+			document.body.classList.add('has-mobile-menu')
+			console.log('Menu opened') // Debug log
+		} else {
+			document.body.style.overflow = 'auto'
+			document.body.classList.remove('has-mobile-menu')
+			console.log('Menu closed') // Debug log
+		}
 	})
+
+	// Close mobile menu when clicking on a link
+	mobileMenu.querySelectorAll('.nav-link').forEach(link => {
+		link.addEventListener('click', () => {
+			hamburger.classList.remove('active')
+			mobileMenu.classList.remove('active')
+			document.body.style.overflow = 'auto'
+			document.body.classList.remove('has-mobile-menu')
+
+			// Reset hamburger icon
+			resetHamburgerIcon()
+		})
+	})
+
+	// Close mobile menu when clicking the close button
+	if (closeMenuBtn) {
+		closeMenuBtn.addEventListener('click', () => {
+			hamburger.classList.remove('active')
+			mobileMenu.classList.remove('active')
+			document.body.style.overflow = 'auto'
+			document.body.classList.remove('has-mobile-menu')
+			console.log('Menu closed via close button') // Debug log
+
+			// Reset hamburger icon
+			resetHamburgerIcon()
+		})
+	}
+
+	// Close mobile menu when clicking outside
+	document.addEventListener('click', e => {
+		if (
+			!hamburger.contains(e.target) &&
+			!mobileMenu.contains(e.target) &&
+			mobileMenu.classList.contains('active')
+		) {
+			hamburger.classList.remove('active')
+			mobileMenu.classList.remove('active')
+			document.body.style.overflow = 'auto'
+			document.body.classList.remove('has-mobile-menu')
+
+			// Reset hamburger icon
+			resetHamburgerIcon()
+		}
+	})
+} else {
+	console.error('Hamburger or nav menu element not found!')
+}
+
+// Handle window resize
+window.addEventListener('resize', () => {
+	if (window.innerWidth > 1024) {
+		hamburger.classList.remove('active')
+		mobileMenu.classList.remove('active')
+		document.body.style.overflow = 'auto'
+
+		// Reset hamburger icon
+		resetHamburgerIcon()
+	}
+
+	// Update particle canvas size
+	const canvas = document.querySelector('canvas')
+	if (canvas) {
+		canvas.width = window.innerWidth
+		canvas.height = window.innerHeight
+	}
 })
 
 // Smooth Scrolling for Navigation Links
@@ -188,6 +324,11 @@ class Particle {
 
 // Create canvas for particle effect
 function createParticleCanvas() {
+	// Only create particles on larger screens for better performance
+	if (window.innerWidth < 768) {
+		return
+	}
+
 	const canvas = document.createElement('canvas')
 	canvas.style.position = 'fixed'
 	canvas.style.top = '0'
@@ -220,9 +361,20 @@ function createParticleCanvas() {
 		requestAnimationFrame(animate)
 	}
 
-	window.addEventListener('resize', resize)
+	window.addEventListener('resize', () => {
+		resize()
+		// Remove particles on mobile after resize
+		if (window.innerWidth < 768) {
+			particles.length = 0
+			canvas.remove()
+		}
+	})
+
+	// Reduce particle count on smaller screens
+	const maxParticles = window.innerWidth < 1024 ? 20 : particleCount
+
 	document.addEventListener('mousemove', e => {
-		if (particles.length < particleCount) {
+		if (particles.length < maxParticles && window.innerWidth >= 768) {
 			particles.push(new Particle(e.clientX, e.clientY))
 		}
 	})
@@ -292,8 +444,34 @@ function getNotificationIcon(type) {
 	}
 }
 
-// Parallax Effect for Background Shapes
-window.addEventListener('scroll', () => {
+// Responsive font size adjustments
+function adjustFontSizes() {
+	const screenWidth = window.innerWidth
+	const root = document.documentElement
+
+	// Adjust base font size based on screen width
+	if (screenWidth < 480) {
+		root.style.fontSize = '14px'
+	} else if (screenWidth < 768) {
+		root.style.fontSize = '15px'
+	} else if (screenWidth < 1024) {
+		root.style.fontSize = '16px'
+	} else {
+		root.style.fontSize = '16px'
+	}
+}
+
+// Optimized parallax effect for mobile
+function handleParallax() {
+	if (window.innerWidth < 768) {
+		// Disable parallax on mobile for better performance
+		const shapes = document.querySelectorAll('.shape')
+		shapes.forEach(shape => {
+			shape.style.transform = 'none'
+		})
+		return
+	}
+
 	const scrolled = window.pageYOffset
 	const shapes = document.querySelectorAll('.shape')
 
@@ -303,7 +481,52 @@ window.addEventListener('scroll', () => {
 			scrolled * speed
 		}px) rotate(${scrolled * 0.1}deg)`
 	})
-})
+}
+
+// Initialize responsive features
+window.addEventListener(
+	'resize',
+	throttle(() => {
+		adjustFontSizes()
+	}, 250)
+)
+
+// Replace the existing parallax scroll event
+window.addEventListener(
+	'scroll',
+	throttle(() => {
+		handleParallax()
+	}, 16)
+)
+
+// Touch-friendly interactions
+function addTouchSupport() {
+	const cards = document.querySelectorAll(
+		'.project-card, .skill-category, .achievement-card'
+	)
+
+	cards.forEach(card => {
+		// Add touch events for better mobile interaction
+		card.addEventListener(
+			'touchstart',
+			function () {
+				this.style.transform = 'scale(0.98)'
+			},
+			{ passive: true }
+		)
+
+		card.addEventListener(
+			'touchend',
+			function () {
+				this.style.transform = ''
+			},
+			{ passive: true }
+		)
+	})
+}
+
+// Initialize touch support
+document.addEventListener('DOMContentLoaded', addTouchSupport)
 
 // Skills Animation on Hover
 document.querySelectorAll('.skill-item').forEach(item => {
@@ -389,13 +612,15 @@ function activateEasterEgg() {
 
 // Page Load Animation
 window.addEventListener('load', () => {
-	// Hide loading screen if any
-	const loadingScreen = document.querySelector('.loading-screen')
+	// Hide loading screen
+	const loadingScreen = document.getElementById('loading-screen')
 	if (loadingScreen) {
-		loadingScreen.style.opacity = '0'
 		setTimeout(() => {
-			loadingScreen.remove()
-		}, 500)
+			loadingScreen.style.opacity = '0'
+			setTimeout(() => {
+				loadingScreen.remove()
+			}, 500)
+		}, 800) // Show loading for at least 800ms for better UX
 	}
 
 	// Animate hero section
@@ -407,8 +632,11 @@ window.addEventListener('load', () => {
 			el.style.transition = 'all 0.6s ease'
 			el.style.opacity = '1'
 			el.style.transform = 'translateY(0)'
-		}, index * 200)
+		}, index * 200 + 1000) // Delay until after loading screen
 	})
+
+	// Initialize responsive features
+	adjustFontSizes()
 })
 
 // Preload images for better performance

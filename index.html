@@ -3,7 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description"
+        content="Sayan Banerjee - Full Stack Developer | JavaScript, React, Node.js | Portfolio showcasing web development projects and skills">
+    <meta name="keywords" content="Full Stack Developer, JavaScript, React, Node.js, Web Development, Portfolio">
+    <meta name="author" content="Sayan Banerjee">
+    <meta property="og:title" content="Sayan Banerjee - Full Stack Developer">
+    <meta property="og:description"
+        content="Passionate Full Stack Developer specializing in JavaScript, React, and Node.js. Explore my projects and get in touch!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sayanbanerjee-007.github.io/portfolio/">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/115403169?v=4">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sayan Banerjee - Full Stack Developer">
+    <meta name="twitter:description"
+        content="Passionate Full Stack Developer specializing in JavaScript, React, and Node.js">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/115403169?v=4">
     <title>Sayan Banerjee - Full Stack Developer</title>
 
     <!-- Favicon -->
@@ -21,6 +36,14 @@
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+
     <!-- Background -->
     <div class="background">
         <div class="gradient-overlay"></div>
@@ -52,13 +75,30 @@
                     <i class="fas fa-moon" id="theme-icon"></i>
                 </button>
                 <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="close-menu-btn" id="close-menu-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-container">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#projects" class="nav-link"><i class="fas fa-laptop-code"></i> Projects</a></li>
+                <li><a href="#resume" class="nav-link"><i class="fas fa-file-alt"></i> Resume</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -102,8 +142,9 @@
             <div class="hero-image">
                 <div class="profile-card glass">
                     <div class="profile-image">
-                        <img src="https://avatars.githubusercontent.com/u/115403169?v=4" alt="Sayan Banerjee"
-                            id="profile-img">
+                        <img src="https://avatars.githubusercontent.com/u/115403169?v=4"
+                            alt="Sayan Banerjee - Full Stack Developer" id="profile-img" loading="lazy"
+                            decoding="async">
                         <div class="profile-ring"></div>
                     </div>
                     <div class="profile-info">
