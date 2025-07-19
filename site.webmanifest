@@ -1,0 +1,27 @@
+{
+	"name": "Sayan Banerjee - Full Stack Developer",
+	"short_name": "Sayan.dev",
+	"description": "Portfolio of Sayan Banerjee - Full Stack Developer",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#4f46e5",
+	"icons": [
+		{
+			"src": "assets/icons/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "assets/icons/favicon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "assets/icons/favicon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}

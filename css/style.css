@@ -1102,6 +1102,48 @@ section {
 	font-size: 0.8rem;
 }
 
+/* Development Tag */
+.dev-tag {
+	display: inline-block;
+	background: linear-gradient(135deg, #ff6b6b, #feca57);
+	color: white;
+	padding: 2px 8px;
+	border-radius: 12px;
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-left: 0.5rem;
+	animation: pulse 2s infinite;
+}
+
+/* Deployed Tag */
+.deployed-tag {
+	display: inline-block;
+	background: linear-gradient(135deg, #10b981, #059669);
+	color: white;
+	padding: 2px 8px;
+	border-radius: 12px;
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-left: 0.5rem;
+	box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+	}
+	70% {
+		box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+	}
+}
+
 /* Resume Section */
 .resume-content {
 	display: flex;
